@@ -1,0 +1,4 @@
+
+dotnet new mvc --no-https --output PartyInvites
+
+dotnet watch run
