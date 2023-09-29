@@ -84,5 +84,31 @@ namespace PSIUWeb.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult Insert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Insert(Pacient p)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    pacientRepository.Create(p);
+                    return View("Index", pacientRepository.GetPacients());
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return View();
+
+        }
     }
 }
