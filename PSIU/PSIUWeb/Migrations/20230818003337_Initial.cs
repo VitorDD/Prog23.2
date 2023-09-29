@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PSIUWeb.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,11 +28,10 @@ namespace PSIUWeb.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Birthdate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Gender = table.Column<int>(type: "int", nullable: true),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Gender = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -166,7 +165,7 @@ namespace PSIUWeb.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Birthdate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Weight = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Height = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Race = table.Column<int>(type: "int", nullable: false),

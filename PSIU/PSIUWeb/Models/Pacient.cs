@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PSIUWeb.Models
 {
-    public enum Race {
-        Asiático,
-        Branco,
-        Indío,
+    public enum Race { 
+        Asiático, 
+        Branco, 
+        Índio, 
         Negro,
         Pardo,
         Outros
@@ -18,12 +18,12 @@ namespace PSIUWeb.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Nome requerido.")]
-        [Display (Name = "Nome")]
+        [Display(Name = "Nome")]
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "Data de nascimento requerida.")]
         [Display(Name = "Data de nascimento")]
-        public DateTime Birthdate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         [Required(ErrorMessage = "Peso requerido.")]
         [Display(Name = "Peso")]
@@ -35,11 +35,10 @@ namespace PSIUWeb.Models
 
         [Required(ErrorMessage = "Raça requerida.")]
         [Display(Name = "Raça")]
-        public Race Race {get; set; }
+        public Race Race { get; set; }
 
         [ForeignKey("User")]
-        public string UserId { get; set; }
-        public AppUser User { get; set; }
-
+        public string? UserId { get; set; }
+        public AppUser? User { get; set; }
     }
 }
