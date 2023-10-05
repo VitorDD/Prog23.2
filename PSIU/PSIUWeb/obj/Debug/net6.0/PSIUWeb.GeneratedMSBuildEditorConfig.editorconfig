@@ -40,6 +40,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxJbnNlcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/USER/Desktop/prog23.2/PSIU/PSIUWeb/Views/Psico/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpY29cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/prog23.2/PSIU/PSIUWeb/Views/Psico/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpY29cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/prog23.2/PSIU/PSIUWeb/Views/Psico/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpY29cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/prog23.2/PSIU/PSIUWeb/Views/Psico/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHNpY29cSW5zZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/Desktop/prog23.2/PSIU/PSIUWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
