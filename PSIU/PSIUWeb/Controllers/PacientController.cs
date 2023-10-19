@@ -49,7 +49,7 @@ namespace PSIUWeb.Controllers
                 try
                 {
                     pacientRepository.Update(pacient);
-                    return View("Index", pacientRepository.GetPacients() );
+                    return View("Index", pacientRepository.GetPacients());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -61,12 +61,12 @@ namespace PSIUWeb.Controllers
 
         [HttpGet]
         public IActionResult Delete(int? id)
-        {
+        { 
             if(id == null)
                 return NotFound();
 
             Pacient? p = pacientRepository.GetPacientById(id.Value);
-
+            
             if (p == null)
                 return NotFound();
 
@@ -76,13 +76,13 @@ namespace PSIUWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
-        {
-            if (id == null || id == 0)
+        { 
+            if(id == null || id == 0)
                 return NotFound();
 
             pacientRepository.Delete(id);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction( nameof(Index) );
         }
 
         [HttpGet]
@@ -92,7 +92,6 @@ namespace PSIUWeb.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Insert(Pacient p)
         {
             if (ModelState.IsValid)
@@ -108,7 +107,7 @@ namespace PSIUWeb.Controllers
                 }
             }
             return View();
-
         }
+    
     }
 }

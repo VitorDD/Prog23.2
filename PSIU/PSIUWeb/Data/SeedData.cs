@@ -6,8 +6,8 @@ namespace PSIUWeb.Data
     public static class SeedData
     {
 
-        public static void EnsurePopulated(
-            IApplicationBuilder app
+        public static void EnsurePopulated( 
+            IApplicationBuilder app 
         )
         {
             AppDbContext context =
@@ -15,14 +15,13 @@ namespace PSIUWeb.Data
                 .ServiceProvider.GetRequiredService<AppDbContext>();
 
             if (context.Database.GetPendingMigrations().Any())
-            {
+            { 
                 context.Database.Migrate();
             }
 
             if (!context.Pacients.Any())
             {
                 context.Pacients.AddRange(
-
                     new Pacient
                     {
                         Name = "Mauricio",
@@ -33,29 +32,17 @@ namespace PSIUWeb.Data
                     },
                     new Pacient
                     {
-                        Name = "Leonardo",
-                        BirthDate = new DateTime(2001, 1, 24),
-                        Race = Race.Branco,
-                        Height = 187,
-                        Weight = 100
+                        Name = "Marcos",
+                        BirthDate = new DateTime(1987, 2, 28),
+                        Race = Race.Pardo,
+                        Height = 175,
+                        Weight = 90
                     }
-
                 );
-                if (!context.Psicos.Any())
-                {
-                    context.Psicos.AddRange(
 
-                        new Psico
-                        {
-                            Name = "Mauricio",
-                            CRP = "123456"
-                        }
-                    );
-
-                    context.SaveChanges();
-                }
+                context.SaveChanges();
             }
-
         }
+
     }
 }

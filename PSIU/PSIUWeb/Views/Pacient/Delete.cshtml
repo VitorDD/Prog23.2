@@ -6,15 +6,15 @@
         <div class="row mb-2">
             <div class="col-6">
                 <h1 class="m-0">
-                    Excluir: <small>Paciente</small>
+                    EXCLUIR: <small>Paciente</small>
                 </h1>
             </div>
             <div class="col-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">
-                        <a asp-controller="Pacient"
-                        asp-action="Index">
-                        Voltar ao inicio
+                        <a asp-controller="Pacient" 
+                            asp-action="Index">
+                            Voltar ao início
                         </a>
                     </li>
                 </ol>
@@ -37,7 +37,7 @@
     <div class="row">
         <form asp-action="DeleteConfirmed">
             <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Excluir" class="btn btn-danger" />
+            <input type="submit" value="Excluir" class="btn btn-danger"/>
         </form>
     </div>
 </div>
