@@ -12,7 +12,7 @@ using PSIUWeb.Data;
 namespace PSIUWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231005233839_Psico-Content-Category")]
+    [Migration("20231005233749_Psico-Content-Category")]
     partial class PsicoContentCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -269,6 +269,43 @@ namespace PSIUWeb.Migrations
                     b.ToTable("Pacients");
                 });
 
+            modelBuilder.Entity("PSIUWeb.Models.Psico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Cep")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Crp")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Liberado")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Race")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Psicos");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -321,6 +358,15 @@ namespace PSIUWeb.Migrations
                 });
 
             modelBuilder.Entity("PSIUWeb.Models.Pacient", b =>
+                {
+                    b.HasOne("PSIUWeb.Models.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PSIUWeb.Models.Psico", b =>
                 {
                     b.HasOne("PSIUWeb.Models.AppUser", "User")
                         .WithMany()

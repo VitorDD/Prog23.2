@@ -4,7 +4,7 @@
 
 namespace PSIUWeb.Migrations
 {
-    public partial class ContentCategories : Migration
+    public partial class ContentCategory : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

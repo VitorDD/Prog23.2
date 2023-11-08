@@ -8,12 +8,19 @@ namespace PSIUWeb.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.AddColumn<bool>(
+                name: "Liberado",
+                table: "Psicos",
+                type: "bit",
+                nullable: false,
+                defaultValue: false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.DropColumn(
+                name: "Liberado",
+                table: "Psicos");
         }
     }
 }
