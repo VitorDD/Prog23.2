@@ -5,22 +5,22 @@ using PSIUWeb.Models;
 
 namespace PSIUWeb.Controllers
 {
-    public class PacientController : Controller
+    public class PsicoController : Controller
     {
-        private IPacientRepository pacientRepository;
+        private IPsicoRepository psicoRepository;
 
-        public PacientController(
-            IPacientRepository _pacientRepo
-        ) 
+        public PsicoController(
+            IPsicoRepository _psicoRepo
+        )
         {
-            pacientRepository = _pacientRepo;
+            psicoRepository = _psicoRepo;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return View( 
-                pacientRepository.GetPacients() 
+            return View(
+                psicoRepository.GetPsicos()
             );
         }
 
@@ -30,78 +30,78 @@ namespace PSIUWeb.Controllers
             if (id <= 0 || id == null)
                 return NotFound();
 
-            Pacient? p = 
-                pacientRepository.GetPacientById(id.Value);
+            Psico? psico =
+                psicoRepository.GetPsicoById(id.Value);
 
-            if (p == null)
+            if (psico == null)
                 return NotFound();
 
-            return View(p);
+            return View(psico);
 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Pacient pacient)
+        public IActionResult Edit(Psico psico)
         {
-            if ( ModelState.IsValid )
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    pacientRepository.Update(pacient);
-                    return View("Index", pacientRepository.GetPacients());
+                    psicoRepository.Update(psico);
+                    return View("Index", psicoRepository.GetPsicos());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     throw;
-                }                
+                }
             }
             return View("Index");
         }
 
         [HttpGet]
-        public IActionResult Delete (int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null)
                 return NotFound();
 
-            Pacient? p =
-                pacientRepository.GetPacientById(id.Value);
+            Psico? psico =
+                psicoRepository.GetPsicoById(id.Value);
 
-            if (p == null)
+            if (psico == null)
                 return NotFound();
 
-            return View(p);
+            return View(psico);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            if(id==null || id==0)
+            if (id == null || id == 0)
                 return NotFound();
 
-            pacientRepository.Delete(id);
+            psicoRepository.Delete(id);
 
             return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
-        public IActionResult Insert ()
+        public IActionResult Insert()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Insert (Pacient p)
+        public IActionResult Insert(Psico psico)
         {
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    pacientRepository.Create(p);
-                    return View("Index", pacientRepository.GetPacients());
+                    psicoRepository.Create(psico);
+                    return View("Index", psicoRepository.GetPsicos());
                 }
                 catch (Exception)
                 {

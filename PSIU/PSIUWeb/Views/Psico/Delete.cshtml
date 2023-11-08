@@ -1,4 +1,4 @@
-﻿@model Pacient
+﻿@model Psico
 
 
 <div class="content-header">
@@ -6,15 +6,15 @@
         <div class="row mb-2">
             <div class="col-6">
                 <h1 class="m-0">
-                    EXCLUIR: <small>Paciente</small>
+                    EXCLUIR: <small>Psicólogo</small>
                 </h1>
             </div>
             <div class="col-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">
-                        <a asp-controller="Pacient"
-                           asp-action="Index"> 
-                           Voltar ao início
+                        <a asp-controller="Psico"
+                           asp-action="Index">
+                            Voltar ao início
                         </a>
                     </li>
                 </ol>
@@ -36,7 +36,7 @@
     </div>
     <div class="row">
         <form asp-action="DeleteConfirmed">
-            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="Id" />
             <input type="submit" value="Excluir" class="btn-danger" />
         </form>
     </div>

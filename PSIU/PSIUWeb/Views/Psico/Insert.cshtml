@@ -1,18 +1,18 @@
-﻿@model Pacient
+﻿@model Psico
 
 <div class="content-header">
     <div class="container">
         <div class="row mb-2">
             <div class="col-6">
                 <h1 class="m-0">
-                    EDIÇÃO: <small>Paciente</small>
+                    CADASTRO: <small>Psicólogo</small>
                 </h1>
             </div>
             <div class="col-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">
                         <a asp-action="Index"
-                            asp-controller="Pacient">
+                            asp-controller="Psico">
                             Listagem
                         </a>
                     </li>
@@ -24,9 +24,9 @@
 <hr />
 <div class="container">
     <div class="row">
-        <form asp-action="Edit" style="width:100%;">
+        <form asp-action="Insert" style="width:100%;">
             <div asp-validation-summary="ModelOnly"></div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" />
 
             <div class="row">
                 <div class="col-12">
@@ -53,10 +53,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <label asp-for="Weight" class="control-label"></label>
-                        <input asp-for="Weight" class="form-control"
-                               placeholder="Peso" />
-                        <span asp-validation-for="Weight" class="text-danger"></span>
+                        <label asp-for="Crp" class="control-label"></label>
+                        <input asp-for="Crp" class="form-control"
+                               placeholder="CRP" />
+                        <span asp-validation-for="Crp" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -64,19 +64,21 @@
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <label asp-for="Height" class="control-label"></label>
-                        <input asp-for="Height" class="form-control"
-                               placeholder="Altura" />
-                        <span asp-validation-for="Height" class="text-danger"></span>
+                        <label asp-for="Cep" class="control-label"></label>
+                        <input asp-for="Cep" class="form-control"
+                               placeholder="CEP" />
+                        <span asp-validation-for="Cep" class="text-danger"></span>
                     </div>
                 </div>
             </div>
 
+
+           <!--
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <label asp-for="Race" class="control-label"></label>
-                        <select asp-for="Race" 
+                        <label asp-for="Liberado" class="control-label"></label>
+                        <select asp-for="Liberado" 
                             asp-items="Html.GetEnumSelectList<Race>()"
                             class="form-control">
                             <option selected="selected"
@@ -87,6 +89,7 @@
                     </div>
                 </div>
             </div>
+           --> 
 
             <hr />
 
